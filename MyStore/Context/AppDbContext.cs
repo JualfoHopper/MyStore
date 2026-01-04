@@ -46,6 +46,7 @@ public class AppDbContext : DbContext
         {
             e.HasKey("OrderItemId");
             e.Property("OrderItemId").ValueGeneratedOnAdd();
+            e.Property("Price").HasColumnType("decimal(10/2)");
             e.HasOne(e => e.Order).WithMany(p => p.OrderItems).HasForeignKey(p => p.OrderId).
             OnDelete(DeleteBehavior.Restrict);
             e.HasOne(e => e.Product).WithMany().HasForeignKey(p => p.ProductId).
@@ -62,3 +63,6 @@ public class AppDbContext : DbContext
         });
     }
 }
+
+//PM> Add-Migration firstMigration
+//PM> Update-Database
