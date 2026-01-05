@@ -63,6 +63,6 @@ public class AppDbContext : DbContext
         });
     }
 }
-
+//Creación de la migració inicial y actualització de la base de dades
 //PM> Add-Migration firstMigration
 //PM> Update-Database

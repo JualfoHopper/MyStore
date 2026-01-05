@@ -1,2 +1,3 @@
 ﻿global using Microsoft.EntityFrameworkCore;
 global using MyStore.Entities;
+global using Microsoft.AspNetCore.Mvc;

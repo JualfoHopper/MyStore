@@ -1,0 +1,32 @@
+﻿@model List<Category>
+
+    <div class="row justify-content-between mt4">
+        <div clase="col-4">
+            <h4>Categories</h4>
+        </div>
+        <div clase="col-4 text-end">
+            <a href="#" class="btn btn-success">Create new</a>
+        </div>   
+    </div>
+    <hr />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th style="width:120px">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
