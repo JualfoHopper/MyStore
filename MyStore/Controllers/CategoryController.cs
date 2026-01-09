@@ -6,7 +6,13 @@ public class CategoryController(AppDbContext _dbContext) : Controller
 {
     public IActionResult Index()
     {
-        List<Category> categories = _dbContext.Categories.ToList();
+        List<CategoryVM> categories = _dbContext.Categories.Select(item =>
+            new CategoryVM
+            {
+                CategoryId = item.CategoryId,
+                Name = item.Name
+            }
+        ).ToList();
         return View(categories);
     }
 }
