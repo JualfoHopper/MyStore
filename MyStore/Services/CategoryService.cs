@@ -16,4 +16,12 @@ public class CategoryService(GenericRepository<Entities.Category> _categoryRepos
         }).ToList();
         return categoriesVM;
     }
+    public async Task AddAsync(CategoryVM categoryVM)
+    {
+        Entities.Category category = new Entities.Category
+        {
+            Name = categoryVM.Name
+        };
+        await _categoryRepository.AddEntity(category);
+    }
 }
